@@ -25,6 +25,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DetectGraphWithCycle", "Det
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MinimumCostWithBuyOneGetOneFree", "MinimumCostWithBuyOneGetOneFree\MinimumCostWithBuyOneGetOneFree.vcxproj", "{1FFBE703-FA14-4811-8329-048CBEC0EC5E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestPalindromeSubstring", "findLongestPalindromeSubstring\findLongestPalindromeSubstring.vcxproj", "{C6D2CB7F-1503-4122-8441-3124A0908B82}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WordSearchII", "WordSearchII\WordSearchII.vcxproj", "{ED2CF706-A717-4502-A913-E0C276FA6A5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -75,6 +79,14 @@ Global
 		{1FFBE703-FA14-4811-8329-048CBEC0EC5E}.Debug|Win32.Build.0 = Debug|Win32
 		{1FFBE703-FA14-4811-8329-048CBEC0EC5E}.Release|Win32.ActiveCfg = Release|Win32
 		{1FFBE703-FA14-4811-8329-048CBEC0EC5E}.Release|Win32.Build.0 = Release|Win32
+		{C6D2CB7F-1503-4122-8441-3124A0908B82}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C6D2CB7F-1503-4122-8441-3124A0908B82}.Debug|Win32.Build.0 = Debug|Win32
+		{C6D2CB7F-1503-4122-8441-3124A0908B82}.Release|Win32.ActiveCfg = Release|Win32
+		{C6D2CB7F-1503-4122-8441-3124A0908B82}.Release|Win32.Build.0 = Release|Win32
+		{ED2CF706-A717-4502-A913-E0C276FA6A5A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ED2CF706-A717-4502-A913-E0C276FA6A5A}.Debug|Win32.Build.0 = Debug|Win32
+		{ED2CF706-A717-4502-A913-E0C276FA6A5A}.Release|Win32.ActiveCfg = Release|Win32
+		{ED2CF706-A717-4502-A913-E0C276FA6A5A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

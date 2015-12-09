@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JumpGameII.cpp">
+    <ClCompile Include="LongestPalindromeSubstring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
