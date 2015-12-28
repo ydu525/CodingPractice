@@ -4,6 +4,7 @@
 #include <vector>
 #include <unordered_map>
 #include <iostream>
+#include <unordered_set>
 
 using namespace std;
 
@@ -54,6 +55,12 @@ public:
 		return false;
 	}
 
+	// We can use search to find out wheter a word is in the dictionary
+	// By doing that, each time we search a word, it will start at the root of the trie
+	// Since we are doing recursion and backtracking with our main solution, we want to keep a record of our prefix
+	//	and it will make looking out word faster
+	// This function will take a pointer to a Trie node, if the passed-in node contains the passed-in character
+	//	we return that child node, otherwise we return null
 	TrieNode* findNext(TrieNode* curPrefix, char nextChar) {
 		TrieNode* cur = curPrefix;
 		if (cur == NULL) {
@@ -84,20 +91,20 @@ public:
 		// write your code here
 		//build trie
 		Trie trie;
-		vector<string> res;
+		unordered_set<string> res;
 		string str;
 
-		int w = board.size();//h
-		int h = board[0].size();//w
+		int h = board.size();
+		int w = board[0].size();
 
-		vector<vector<bool>> visited(w, vector<bool>(h, false));
+		vector<vector<bool>> visited(h, vector<bool>(w, false));
 
 		for (string &w : words) {
 			trie.insert(w);
 		}
 
-		for (int i = 0; i < w; ++i) {
-			for (int j = 0; j < h; ++j) {
+		for (int i = 0; i < h; ++i) {
+			for (int j = 0; j < w; ++j) {
 				TrieNode* cur = trie.findNext(NULL, board[i][j]);
 				if (cur == NULL) {
 					continue;
@@ -110,45 +117,51 @@ public:
 			}
 		}
 
-		return res;
+		vector<string> resv;
+		for (auto it = res.begin(); it != res.end(); ++it) {
+			resv.push_back(*it);
+		}
+
+		return resv;
 	}
 
-	void wordSearchIIHelper(vector<string> &res, string &str, TrieNode* pre, Trie &trie, int x, int y, vector<vector<char> > &board, vector<vector<bool>> &visited) {
+	void wordSearchIIHelper(unordered_set<string> &res, string &str, TrieNode* pre, Trie &trie, int y, int x, vector<vector<char> > &board, vector<vector<bool>> &visited) {
 		if (trie.isWord(pre)) {
-			res.push_back(str);
+			if (res.find(str) == res.end()) {
+				res.insert(str);
+			}
+		}
+
+		if (visited[y][x]) {
 			return;
 		}
 
-		if (visited[x][y]) {
-			return;
-		}
+		visited[y][x] = true;
 
-		visited[x][y] = true;
+		const vector<int> n = { 0, -1, 1, 0 };
+		const vector<int> m = { -1, 0, 0, 1 };
 
-		const vector<int> m = { 0, -1, 1, 0 };
-		const vector<int> n = { -1, 0, 0, 1 };
-
-		int w = board.size();//h
-		int h = board[0].size();//w
+		int h = board.size();		//height
+		int w = board[0].size();	//width
 
 		int mx, ny;
 		for (int i = 0; i < 4; ++i) {
 			mx = x + m[i];
 			ny = y + n[i];
 
-			if (mx >= 0 && mx < w && ny >= 0 && ny < h && !visited[mx][ny]) {
-				TrieNode* cur = trie.findNext(pre, board[mx][ny]);
+			if (mx >= 0 && mx < w && ny >= 0 && ny < h && !visited[ny][mx]) {
+				TrieNode* cur = trie.findNext(pre, board[ny][mx]);
 				if (cur == NULL) {
 					continue;
 				}
 				else {
-					str.push_back(board[mx][ny]);
-					wordSearchIIHelper(res, str, cur, trie, mx, ny, board, visited);
+					str.push_back(board[ny][mx]);
+					wordSearchIIHelper(res, str, cur, trie, ny, mx, board, visited);
 					str.pop_back();
 				}
 			}
 		}
-		visited[x][y] = false;
+		visited[y][x] = false;
 	}
 };
 
@@ -157,5 +170,10 @@ int main() {
 	vector<vector<char> > board = { { 'd', 'o', 'a', 'f' }, { 'a', 'g', 'a', 'i' }, { 'd', 'c', 'a', 'n' } };
 	vector<string> dict = { "dog", "dad", "dgdg", "can", "again" };
 	vector<string> res = s.wordSearchII(board, dict);
+
+	board = { { 'a', 'b', 'c', 'e' }, { 's', 'f', 'c', 's' }, { 'a', 'd', 'e', 'e' } };
+	dict = { "se", "see" };
+	res = s.wordSearchII(board, dict);
+
 	return 0;
 }
