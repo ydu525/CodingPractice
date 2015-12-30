@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestPalindromeSubstring"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RestoreIPAddresses", "RestoreIPAddresses\RestoreIPAddresses.vcxproj", "{A7A3AC19-EC47-4EF9-BA91-39C47E0B7911}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WordLadderII", "WordLadderII\WordLadderII.vcxproj", "{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -93,6 +95,10 @@ Global
 		{A7A3AC19-EC47-4EF9-BA91-39C47E0B7911}.Debug|Win32.Build.0 = Debug|Win32
 		{A7A3AC19-EC47-4EF9-BA91-39C47E0B7911}.Release|Win32.ActiveCfg = Release|Win32
 		{A7A3AC19-EC47-4EF9-BA91-39C47E0B7911}.Release|Win32.Build.0 = Release|Win32
+		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Debug|Win32.Build.0 = Debug|Win32
+		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Release|Win32.ActiveCfg = Release|Win32
+		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
