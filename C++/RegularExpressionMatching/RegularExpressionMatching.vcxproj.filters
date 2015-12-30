@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WordLadderII.cpp">
+    <ClCompile Include="RegularExpressionMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

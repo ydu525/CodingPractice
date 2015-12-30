@@ -33,6 +33,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RestoreIPAddresses", "Resto
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WordLadderII", "WordLadderII\WordLadderII.vcxproj", "{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WildcardMatching", "WildcardMatching\WildcardMatching.vcxproj", "{D839D102-A201-4860-A333-DA131FB15091}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegularExpressionMatching", "RegularExpressionMatching\RegularExpressionMatching.vcxproj", "{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -99,6 +103,14 @@ Global
 		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Debug|Win32.Build.0 = Debug|Win32
 		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Release|Win32.ActiveCfg = Release|Win32
 		{8BE020F4-6E88-4718-809D-B5BDDE6C8F3A}.Release|Win32.Build.0 = Release|Win32
+		{D839D102-A201-4860-A333-DA131FB15091}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D839D102-A201-4860-A333-DA131FB15091}.Debug|Win32.Build.0 = Debug|Win32
+		{D839D102-A201-4860-A333-DA131FB15091}.Release|Win32.ActiveCfg = Release|Win32
+		{D839D102-A201-4860-A333-DA131FB15091}.Release|Win32.Build.0 = Release|Win32
+		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Debug|Win32.Build.0 = Debug|Win32
+		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Release|Win32.ActiveCfg = Release|Win32
+		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

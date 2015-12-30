@@ -1,5 +1,5 @@
 ﻿/*
-* see http://www.lintcode.com/en/problem/restore-ip-addresses/ for problem description
+* see http://www.lintcode.com/en/problem/word-ladder-ii/ for problem description
 */
 #include <vector>
 #include <unordered_map>
