@@ -33,6 +33,10 @@ public:
 		int dc = curNums.size();
 
 		if (dc == maxDots) {
+			if (start != l) {
+				return;
+			}
+
 			string tmp;
 			for (int i = 0; i < dc; ++i) {
 				tmp.append(to_string(curNums[i]));
@@ -43,8 +47,15 @@ public:
 			return;
 		}
 
-		for (int i = 1; i <= maxDigits & start + i <= l; ++i) {
-			//pruning - continue when the dots left can't cover the digits left
+		// 0 cant lead other digits
+		if (s[start] == '0') {
+			curNums.push_back(0);
+			restoreIpAddressesHelper(curNums, start + 1, res, s);
+			curNums.pop_back();
+			return;
+		}
+
+		for (int i = 1; i <= maxDigits && start + i <= l; ++i) {
 			if (l - start - i > (maxDots - dc - 1) * maxDigits) {
 				continue;
 			}
@@ -65,6 +76,8 @@ int main() {
 	vector<string> res = s.restoreIpAddresses(string("25525511135"));
 	res = s.restoreIpAddresses(string("0000"));
 	res = s.restoreIpAddresses(string("255255255255"));
+	res = s.restoreIpAddresses(string("25255255255"));
+	res = s.restoreIpAddresses(string("010011010"));
 
 	return 0;
 }
