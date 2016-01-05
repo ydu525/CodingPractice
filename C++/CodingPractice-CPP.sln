@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WildcardMatching", "Wildcar
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegularExpressionMatching", "RegularExpressionMatching\RegularExpressionMatching.vcxproj", "{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KClosestNumbersInSortedArray", "KClosestNumbersInSortedArray\KClosestNumbersInSortedArray.vcxproj", "{2C90EE9E-5B70-4BD9-AD7A-88F93C6D3679}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -111,6 +113,10 @@ Global
 		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Debug|Win32.Build.0 = Debug|Win32
 		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Release|Win32.ActiveCfg = Release|Win32
 		{2C9CAE4E-8DFD-4724-964F-F7C924B285AF}.Release|Win32.Build.0 = Release|Win32
+		{2C90EE9E-5B70-4BD9-AD7A-88F93C6D3679}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2C90EE9E-5B70-4BD9-AD7A-88F93C6D3679}.Debug|Win32.Build.0 = Debug|Win32
+		{2C90EE9E-5B70-4BD9-AD7A-88F93C6D3679}.Release|Win32.ActiveCfg = Release|Win32
+		{2C90EE9E-5B70-4BD9-AD7A-88F93C6D3679}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
