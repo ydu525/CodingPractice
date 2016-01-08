@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{225B5ECB-E239-434F-BD27-A32037EC2C51}</ProjectGuid>
-    <RootNamespace>InorderSuccessorInBinarySearchTree</RootNamespace>
+    <ProjectGuid>{082E2C4E-CB68-4791-86BA-0D40B6497E16}</ProjectGuid>
+    <RootNamespace>ReorderList</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,7 +64,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="InorderSuccessorInBinarySearchTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
