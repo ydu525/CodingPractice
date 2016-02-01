@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ReorderList.cpp">
+    <ClCompile Include="SubsetWithGivenSum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

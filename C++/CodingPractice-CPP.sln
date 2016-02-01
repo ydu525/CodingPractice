@@ -41,6 +41,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KClosestNumbersInSortedArra
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InorderSuccessorInBinarySearchTree", "InorderSuccessorInBinarySearchTree\InorderSuccessorInBinarySearchTree.vcxproj", "{225B5ECB-E239-434F-BD27-A32037EC2C51}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReorderList", "ReorderList\ReorderList.vcxproj", "{082E2C4E-CB68-4791-86BA-0D40B6497E16}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SubsetWithGivenSum", "SubsetWithGivenSum\SubsetWithGivenSum.vcxproj", "{348C8226-E703-4AE7-A7BC-7B8AF458D3C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -123,6 +127,14 @@ Global
 		{225B5ECB-E239-434F-BD27-A32037EC2C51}.Debug|Win32.Build.0 = Debug|Win32
 		{225B5ECB-E239-434F-BD27-A32037EC2C51}.Release|Win32.ActiveCfg = Release|Win32
 		{225B5ECB-E239-434F-BD27-A32037EC2C51}.Release|Win32.Build.0 = Release|Win32
+		{082E2C4E-CB68-4791-86BA-0D40B6497E16}.Debug|Win32.ActiveCfg = Debug|Win32
+		{082E2C4E-CB68-4791-86BA-0D40B6497E16}.Debug|Win32.Build.0 = Debug|Win32
+		{082E2C4E-CB68-4791-86BA-0D40B6497E16}.Release|Win32.ActiveCfg = Release|Win32
+		{082E2C4E-CB68-4791-86BA-0D40B6497E16}.Release|Win32.Build.0 = Release|Win32
+		{348C8226-E703-4AE7-A7BC-7B8AF458D3C4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{348C8226-E703-4AE7-A7BC-7B8AF458D3C4}.Debug|Win32.Build.0 = Debug|Win32
+		{348C8226-E703-4AE7-A7BC-7B8AF458D3C4}.Release|Win32.ActiveCfg = Release|Win32
+		{348C8226-E703-4AE7-A7BC-7B8AF458D3C4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
