@@ -6,6 +6,7 @@
 #include <iostream>
 #include <unordered_set>
 #include <string> 
+#include <algorithm>
 
 using namespace std;
 
@@ -20,45 +21,65 @@ public:
 	vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict) {
 		// write your code here
 		vector<string> visited;
+		unordered_set<string> visitedHash;
 		vector<vector<string>> res;
+		size_t shortest = INT_MAX;
 
 		visited.push_back(start);
+		visitedHash.insert(start);
 
-		findLaddersHelper(res, visited, 0, start, end, dict);
+		findLaddersHelper(res, visited, visitedHash, start, end, dict, shortest);
 
 		return res;
 	}
 
-	void findLaddersHelper(vector<vector<string>> &res, vector<string> &visited, int index, string cur, string &end, unordered_set<string> &dict) {
+	void findLaddersHelper(vector<vector<string>> &res, vector<string> &visited, unordered_set<string> &visitedHash, string cur, string &end, unordered_set<string> &dict, size_t &shortest) {
+
+		if (visited.size() > shortest) {
+			return;
+		}
 
 		if (cur == end) {
+			shortest = min(visited.size(), shortest);
+			for (auto it = res.begin(); it != res.end();)
+			{
+				if (it->size() > shortest)
+					it = res.erase(it);
+				else
+					++it;
+			}
 			res.push_back(visited);
 			return;
 		}
 
-		if (index == end.size()) {
+		if (visited.size() == dict.size()) {
 			return;
 		}
 
-		char tmp = cur[index];
-		for (char c = 'a'; c <= 'z'; ++c) {
-			if (tmp != c) {
-				cur[index] = c;
-				if (dict.find(cur) != dict.end()) {
+		for (int i = 0; i < end.size(); ++i) {
+			char tmp = cur[i];
+			for (char c = 'a'; c <= 'z'; ++c) {
+				cur[i] = c;
+				if (visitedHash.find(cur) == visitedHash.end() && dict.find(cur) != dict.end()) {
 					visited.push_back(cur);
-					findLaddersHelper(res, visited, index + 1, cur, end, dict);
+					visitedHash.insert(cur);
+					findLaddersHelper(res, visited, visitedHash, cur, end, dict, shortest);
+					visitedHash.erase(cur);
 					visited.pop_back();
 				}
+				cur[i] = tmp;
 			}
-		}
+		}	
 	}
 };
 
 int main() {
 	Solution s;
 
-	unordered_set<string> dict = { "hot", "dot", "dog", "lot", "log" };
-	vector<vector<string>> res = s.findLadders("hit", "cog", dict);
+	unordered_set<string> dict1 = { "hot", "cog", "dog", "tot", "hog", "hop", "pot", "dot" };
+	unordered_set<string> dict2 = { "frye", "heat", "tree", "thee", "game", "free", "hell", "fame", "faye" };
+	vector<vector<string>> res1 = s.findLadders("hot", "dog", dict1);
+	vector<vector<string>> res2 = s.findLadders("game", "thee", dict2);
 
 	return 0;
 }
