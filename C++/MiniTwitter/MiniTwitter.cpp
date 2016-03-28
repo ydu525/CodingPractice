@@ -10,8 +10,8 @@
 #include <string> 
 #include <algorithm>
 #include <string>
-#include <ctime>
 #include <queue>
+#include <list>
 
 using namespace std;
 
@@ -43,17 +43,15 @@ public:
 	// return a tweet
 	Tweet postTweet(int user_id, string tweet_text) {
 		//  Write your code here
-		time_t timestamp;
-		time(&timestamp);
 		Tweet tw = Tweet::create(user_id, tweet_text);
 		auto it_db = tweets_db_.find(user_id);
 		if (it_db == tweets_db_.end()) {
-			map<time_t, Tweet> m;
-			m.emplace(timestamp, tw);
+			list<Tweet> m;
+			m.emplace_front(tw);
 			tweets_db_.emplace(user_id, move(m));
 		}
 		else {
-			it_db->second.emplace(++timestamp, tw);
+			it_db->second.emplace_front(tw);
 		}
 		return tw;
 	}
@@ -90,7 +88,7 @@ public:
 			}
 			auto node = q.top();
 			q.pop();
-			res.push_back(node.mIt_tw->second);
+			res.push_back(*node.mIt_tw);
 			if (++node.mIt_tw != node.mIt_db->second.end()) {
 				q.push(node);
 			}
@@ -110,7 +108,7 @@ public:
 		}
 		int cnt = 0;
 		for (const auto &tw : it_db->second) {
-			res.push_back(tw.second);
+			res.push_back(tw);
 			if (++cnt >= feeds_num) {
 				break;
 			}
@@ -149,21 +147,21 @@ public:
 private:
 	const int feeds_num = 10;
 
-	unordered_map<int, map<time_t, Tweet>> tweets_db_;
+	unordered_map<int, list<Tweet>> tweets_db_;
 	unordered_map<int, unordered_set<int>> ft_relations_;
 	//unordered_map<int, unordered_set<int>> tf_relations_;
 
 	class QueueNode {
 	public:
-		unordered_map<int, map<time_t, Tweet>>::iterator mIt_db;
-		map<time_t, Tweet>::iterator mIt_tw;
+		unordered_map<int, list<Tweet>>::iterator mIt_db;
+		list<Tweet>::iterator mIt_tw;
 
-		QueueNode(unordered_map<int, map<time_t, Tweet>>::iterator it_db, map<time_t, Tweet>::iterator it_tw) : mIt_db(it_db), mIt_tw(it_tw) {}
+		QueueNode(unordered_map<int, list<Tweet>>::iterator it_db, list<Tweet>::iterator it_tw) : mIt_db(it_db), mIt_tw(it_tw) {}
 	};
 
 	struct Compare {
 		bool operator() (QueueNode &n1, QueueNode &n2) {
-			return n1.mIt_tw->first < n2.mIt_tw->first;
+			return n1.mIt_tw->id < n2.mIt_tw->id;
 		}
 	};
 };
@@ -178,6 +176,8 @@ int main() {
 	mtw.postTweet(2, "test4");
 	mtw.postTweet(2, "test5");
 	tl1 = mtw.getNewsFeed(1);
+	tl1 = mtw.getNewsFeed(2);
+	mtw.postTweet(1, "test6");
 	tl1 = mtw.getNewsFeed(2);
 	mtw.follow(1, 2);
 	tl1 = mtw.getNewsFeed(1);
