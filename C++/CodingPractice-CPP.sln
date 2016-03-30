@@ -49,6 +49,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiniTwitter", "MiniTwitter\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsistentHashing", "ConsistentHashing\ConsistentHashing.vcxproj", "{CBFA518A-BAFF-45FD-9A70-1BCA297A4F78}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsistentHashingII", "ConsistentHashingII\ConsistentHashingII.vcxproj", "{04E63F15-103D-4895-B267-713B5219CC52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -147,6 +149,10 @@ Global
 		{CBFA518A-BAFF-45FD-9A70-1BCA297A4F78}.Debug|Win32.Build.0 = Debug|Win32
 		{CBFA518A-BAFF-45FD-9A70-1BCA297A4F78}.Release|Win32.ActiveCfg = Release|Win32
 		{CBFA518A-BAFF-45FD-9A70-1BCA297A4F78}.Release|Win32.Build.0 = Release|Win32
+		{04E63F15-103D-4895-B267-713B5219CC52}.Debug|Win32.ActiveCfg = Debug|Win32
+		{04E63F15-103D-4895-B267-713B5219CC52}.Debug|Win32.Build.0 = Debug|Win32
+		{04E63F15-103D-4895-B267-713B5219CC52}.Release|Win32.ActiveCfg = Release|Win32
+		{04E63F15-103D-4895-B267-713B5219CC52}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

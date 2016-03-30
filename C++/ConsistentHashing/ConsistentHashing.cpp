@@ -53,7 +53,7 @@ public:
 						tv[0] = it->second[j][0] + half + 1;
 						tv[1] = it->second[j][1];
 						tv[2] = i + 1;
-						tvv.emplace_back(tv);
+						tvv.emplace_back(move(tv));
 					}
 					else {
 						tvv.emplace_back(it->second[j]);
