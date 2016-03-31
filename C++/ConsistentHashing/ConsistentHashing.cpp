@@ -27,13 +27,14 @@ public:
 				}
 				auto it = m.find(i - 1);
 				int max_diff = 0;
-				int idx;
-				int id;
+				int idx = 0;
+				int id = 0;
 				for (auto j = 0; j < it->second.size(); ++j) {
 					int diff = it->second[j][1] - it->second[j][0];
 					if (diff > max_diff) {
 						max_diff = diff;
 						idx = j;
+						id = it->second[j][2];
 					} else if (diff == max_diff) {
 						if (it->second[j][2] < id) {
 							idx = j;
