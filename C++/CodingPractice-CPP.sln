@@ -61,6 +61,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BadStudents", "BadStudents\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoPowerMinimum", "TwoPowerMinimum\TwoPowerMinimum.vcxproj", "{FDDAA428-0E43-45B8-89E2-80750E3BDCAC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KSortedListsIterator", "KSortedListsIterator\KSortedListsIterator.vcxproj", "{8AD44E2A-9257-4049-B170-01E221BD0B43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -183,6 +185,10 @@ Global
 		{FDDAA428-0E43-45B8-89E2-80750E3BDCAC}.Debug|Win32.Build.0 = Debug|Win32
 		{FDDAA428-0E43-45B8-89E2-80750E3BDCAC}.Release|Win32.ActiveCfg = Release|Win32
 		{FDDAA428-0E43-45B8-89E2-80750E3BDCAC}.Release|Win32.Build.0 = Release|Win32
+		{8AD44E2A-9257-4049-B170-01E221BD0B43}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8AD44E2A-9257-4049-B170-01E221BD0B43}.Debug|Win32.Build.0 = Debug|Win32
+		{8AD44E2A-9257-4049-B170-01E221BD0B43}.Release|Win32.ActiveCfg = Release|Win32
+		{8AD44E2A-9257-4049-B170-01E221BD0B43}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
