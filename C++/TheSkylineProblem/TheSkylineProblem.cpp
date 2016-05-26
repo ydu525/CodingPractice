@@ -14,7 +14,7 @@ public:
 			while (!pq.empty() && n.li > pq.top().ri) {
 				popEnds(pq, res);
 			}
-			if (pq.empty() || n.height > pq.top().height) {
+			if (n.height > pq.top().height) {
 				res.emplace_back(n.li, n.height);
 			}
 			pq.push(n);
@@ -34,13 +34,13 @@ private:
 	};
 	struct nodeComp {
 		bool operator() (const node& n1, const node& n2) const {
-			return n1.height < n2.height;
+			return n1.height != n2.height ? n1.height < n2.height : n1.ri < n2.ri;
 		}
 	};
 	void popEnds(priority_queue<node, vector<node>, nodeComp> &pq, vector<pair<int, int>> &res) {
 		node pre = pq.top();
 		pq.pop();
-		while (pre.ri > pq.top().ri) {
+		while (!pq.empty() && pre.ri > pq.top().ri) {
 			pq.pop();
 		}
 		if (!pq.empty()) {
@@ -54,6 +54,7 @@ private:
 
 int main() {
 	vector<vector<int>> test1 = { { 2, 13, 10 }, { 10, 17, 25 }, { 12, 20, 14 } };
+	vector<vector<int>> test2 = { { 0, 2, 3 }, { 2, 5, 3 }};
 	Solution s;
-	s.getSkyline(test1);
+	s.getSkyline(test2);
 }

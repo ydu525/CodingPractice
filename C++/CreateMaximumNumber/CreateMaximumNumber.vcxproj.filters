@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TheSkylineProblem.cpp">
+    <ClCompile Include="CreateMaximumNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

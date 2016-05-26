@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0EEEEE9B-6304-4B80-9C7D-B5B859CA4D53}</ProjectGuid>
-    <RootNamespace>TheSkylineProblem</RootNamespace>
+    <ProjectGuid>{8A3DDE1A-F3EB-489E-A71B-832AE2BBAC67}</ProjectGuid>
+    <RootNamespace>CreateMaximumNumber</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,7 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TheSkylineProblem.cpp" />
+    <ClCompile Include="CreateMaximumNumber.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
