@@ -24,28 +24,26 @@ public:
 		if (m == 0) {
 			return 0;
 		}
-		int highest = 0;
-		auto comp = [&](const node& rhs, const node& lhs){ return rhs.value != lhs.value ? rhs.value > lhs.value : rhs.index > lhs.index; };
+		int highest = matrix[src.first][src.second];
 		unordered_set<pair<int, int>, MyHash> visited;
-		priority_queue<node, vector<node>, decltype(comp)> q;
-
+		priority_queue<pair<int, int>, vector<pair<int, int>>, MyComp> pq{MyComp(matrix)};
+	
 		visited.insert(src);
-		q.emplace(src, matrix[src.first][src.second]);
-		while (!q.empty()) {
-			auto p = q.top();
-			q.pop();
-			if (p.value > highest) {
-				highest = p.value;
-			}
+		pq.push(src);
+		while (!pq.empty()) {
+			auto p = pq.top();
+			pq.pop();
+			int value = matrix[p.first][p.second];
+			highest = max(highest, value);	
 			for (const auto& d : directions) {
-				pair<int, int> next(p.index.first + d.first, p.index.second + d.second);
+				pair<int, int> next(p.first + d.first, p.second + d.second);
 				if (next.first >= 0 && next.first < n && next.second >= 0 && next.second < m && visited.find(next) == visited.end()) {
 					if (next == dst) {
 						highest = max(highest, matrix[dst.first][dst.second]);
 						return highest + 1;
 					}
 					int next_value = matrix[next.first][next.second];
-					q.emplace(next, next_value);
+					pq.push(next);
 					visited.insert(next);
 				}
 			}
@@ -58,6 +56,20 @@ private:
 		inline std::size_t operator()(const std::pair<int, int>& p) const {
 			return (hash<int>()(p.first) + hash<int>()(p.second));
 		}
+	};
+
+	class MyComp {
+		const vector<vector<int>>* matrix;
+	public:
+		MyComp(const vector<vector<int>>& m) {
+			matrix = &m;
+		}
+		bool operator() (const pair<int, int>& rhs, const pair<int, int>& lhs) const {
+			int rhs_val = (*matrix)[rhs.first][rhs.second];
+			int lhs_val = (*matrix)[lhs.first][lhs.second];
+			return rhs_val != lhs_val ? rhs_val > lhs_val : rhs > lhs;
+		}
+		
 	};
 
 	struct node {
