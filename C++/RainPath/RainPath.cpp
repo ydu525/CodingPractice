@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Given a src, a dst and a matrix. Each element in the matrix is the height of a bar. From day 0, the amount of rain will increase by 1 each day.
  * When the amount of rain is greater than the height of a bar, that bar will be overflowed. Find the earliest day that the water will be connected from src to dst.
  */
@@ -26,7 +26,7 @@ public:
 		}
 		int highest = matrix[src.first][src.second];
 		unordered_set<pair<int, int>, MyHash> visited;
-		priority_queue<pair<int, int>, vector<pair<int, int>>, MyComp> pq{MyComp(matrix)};
+		priority_queue<pair<int, int>, vector<pair<int, int>>, MyComp> pq(MyComp{matrix});
 	
 		visited.insert(src);
 		pq.push(src);
@@ -70,12 +70,6 @@ private:
 			return rhs_val != lhs_val ? rhs_val > lhs_val : rhs > lhs;
 		}
 		
-	};
-
-	struct node {
-		pair<int, int> index;
-		int value;
-		node(pair<int, int> idx, int val) : index(idx), value(val) {}
 	};
 };
 
