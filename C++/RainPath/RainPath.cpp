@@ -26,7 +26,12 @@ public:
 		}
 		int highest = matrix[src.first][src.second];
 		unordered_set<pair<int, int>, MyHash> visited;
-		priority_queue<pair<int, int>, vector<pair<int, int>>, MyComp> pq(MyComp{matrix});
+		auto comp = [&matrix](const pair<int, int>& rhs, const pair<int, int>& lhs) {
+			int rhs_val = matrix[rhs.first][rhs.second];
+			int lhs_val = matrix[lhs.first][lhs.second];
+			return rhs_val != lhs_val ? rhs_val > lhs_val : rhs > lhs;
+		};
+		priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(comp)> pq(comp);
 	
 		visited.insert(src);
 		pq.push(src);
@@ -59,14 +64,13 @@ private:
 	};
 
 	class MyComp {
-		const vector<vector<int>>* matrix;
+		const vector<vector<int>>& matrix;
 	public:
-		MyComp(const vector<vector<int>>& m) {
-			matrix = &m;
-		}
+		MyComp(const vector<vector<int>>& m) : matrix(m){}
+
 		bool operator() (const pair<int, int>& rhs, const pair<int, int>& lhs) const {
-			int rhs_val = (*matrix)[rhs.first][rhs.second];
-			int lhs_val = (*matrix)[lhs.first][lhs.second];
+			int rhs_val = matrix[rhs.first][rhs.second];
+			int lhs_val = matrix[lhs.first][lhs.second];
 			return rhs_val != lhs_val ? rhs_val > lhs_val : rhs > lhs;
 		}
 		
