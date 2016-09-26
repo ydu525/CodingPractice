@@ -48,6 +48,18 @@ Done and Optimal
 None
 
 ----------------------------------------------------------------------
+##### Compress String
+###### Description
+Compress strings such as aaabbaaabb
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+It may not be the best solution, but it is pretty good.
+This usually be a follow-up of uncompress string problem.
+
+----------------------------------------------------------------------
 #### Consistent Hashing
 ###### Description
 Same as LintCode No.519
@@ -73,6 +85,17 @@ None
 #### Copy List With Random Pointer
 ###### Description
 Same as LeetCode No.138 and LintCode No.105
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
+#### Count Of Smaller Numbers After Self
+###### Description
+Same as LeetCode No.315
 ###### Language
 C++
 ###### Status
@@ -191,6 +214,17 @@ Done and Optimal
 None
 
 ----------------------------------------------------------------------
+#### Lockers Distances
+###### Description
+Given a matrix and a set of locker positions. Return a matrix that each cell is the distance to the nearest locker.
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
 #### Longest Palindrome Substring
 ###### Description
 Same as LeetCode No.5 and LintCode No.200
@@ -202,11 +236,66 @@ Done and Optimal
 None
 
 ----------------------------------------------------------------------
+#### Max Holidays
+###### Description
+Given a graph of cities. Each city has different number of holidays on each month and only have airlanes to certain other cities. Find the maximum number of holidays one can have within a year.
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
+#### Max Length Identical Subtrees
+###### Description
+Find max length identical subtrees in a given tree.
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
+#### Max Product Of Two Words With No Common Letter
+###### Description
+Find a pair words such that they dont have characters in common and sum of their length is maximum
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+The solution is situational. Please refer to this [Quora page](https://www.quora.com/Given-a-dictionary-of-words-how-can-we-efficiently-find-a-pair-words-s-t-they-dont-have-characters-in-common-and-sum-of-their-length-is-maximum).
+
+----------------------------------------------------------------------
 #### Max Value Formula
 ###### Description
 Given a array of number. Insert +/* between each number and form a formula. Find the formula that creates a max value.
 1. return the max value
 2. return the formula itself
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
+#### Merge Tree Xnor
+###### Description
+Merge two trees. Value in each leaf can be either 0 or 1. Only care about the value in the leaves of the merged tree. When merge two leaves, the result should be ANDed.
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
+#### Min Time Diff
+###### Description
+Given an array of time stamps. Find the minimum time difference between two time stamps.
 ###### Language
 C++
 ###### Status
@@ -229,6 +318,28 @@ None
 #### Minimum Cost With Buy One Get One Free
 ###### Description
 Given a array of numbers. Each number represents a price of an item. You can "buy one get one free". Find the minimum amount of money to buy all items. 
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
+
+----------------------------------------------------------------------
+#### Minimum Raggedness
+###### Description
+See minimum raggedness on wikipedia
+###### Language
+C++
+###### Status
+Done and Not Optimal
+###### Note
+DP is solution is used. A better run time but more complex solution can be found online.
+
+----------------------------------------------------------------------
+#### Mix Cases Pattern
+###### Description
+Given a dictionary and find whether the input word is matching with one in the dictionary. The rules are: 1. Upper case letters should match exactly; 2. For lower case letters, the input word should match the prefix of the words in the dictionary.
 ###### Language
 C++
 ###### Status
@@ -344,7 +455,7 @@ C++
 ###### Status
 Done and Not Optimal
 ###### Note
-Please see Minimum raggedness on wikipedia. DP solution is good for an interview question. But there is a better linear solution.
+Related Minimum raggedness Problem. Code could be cleaner.
 
 ----------------------------------------------------------------------
 #### The Skyline Problem
@@ -414,3 +525,13 @@ Done and Optimal
 ###### Note
 None
 
+----------------------------------------------------------------------
+#### Words Game
+###### Description
+Given a set of words. Two players are going to play a game: Each one takes a charater each turn. The picked charater and pre-exists string must be a prefix of the words in the set. Whoever pick the last avaliable character lose the game. Find the winning sequence for player one.
+###### Language
+C++
+###### Status
+Done and Optimal
+###### Note
+None
